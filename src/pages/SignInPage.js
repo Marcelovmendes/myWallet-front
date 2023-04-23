@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import MyWalletLogo from "../components/MyWalletLogo";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
+import { UserContext } from "../contexts/UserContext";
+
 
 export default function SignInPage() {
   const [form, setForm] = useState({email: "", password:""})
+  const {setUser} = useContext(UserContext)
   const navigate = useNavigate();
 
   const handleForm=(e)=>{
@@ -14,12 +17,19 @@ export default function SignInPage() {
   const handleLogin = async(e) => {
     e.preventDefault();
      try{
-     await axios.post("http://localhost:5000/",form)
+     const res = await axios.post("http://localhost:5000/",form)
+     const {token,user} =res.data
+     const {name,email,_id} =user
+     setUser({_id,name,email,token})
+     //console.log(_id,name,email,token)
+     navigate("/home");
+     
      }catch(err){
      console.log(err.response.data)
-     alert (err.response.data)
+     if(err === '404') return alert("Usuario não encontrado")
+     if(err === '422') return alert("Usuario ou senha Invalido")
+     if(err === '500') return alert("Erro interno do servidor")
      }
-   // navigate("/home");
   };
   return (
     <SingInContainer>
