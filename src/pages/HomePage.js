@@ -1,49 +1,89 @@
 import styled from "styled-components"
 import { BiExit } from "react-icons/bi"
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai"
+import { useEffect, useState,useContext } from "react"
+import axios from "axios";
+import { UserContext } from "../contexts/UserContext";
+import { Link } from "react-router-dom";
+
 
 export default function HomePage() {
+  const [transactions, setTransactions] = useState([]);
+  const [balance, setBalance] = useState(0);
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    async function fetchTransactions() {
+      try {
+        const response = await axios.get("http://localhost:5000/home", {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+        setTransactions(response.data);
+      } catch (err) {
+        console.log(err);
+        if(!user.token){
+          alert("Faça login")
+        }
+      }
+    } 
+
+    fetchTransactions();
+  }, []);
+
+  useEffect(() => {
+    const totalIncome = transactions
+      .filter((t) => t.tipo === "entrada")
+      .reduce((acc, t) => acc + t.value, 0);
+    const totalExpense = transactions
+      .filter((t) => t.tipo === "saida")
+      .reduce((acc, t) => acc + t.value, 0);
+    setBalance(totalIncome - totalExpense);
+  }, [transactions]);
+
+  console.log(balance)
+
   return (
     <HomeContainer>
       <Header>
-        <h1>Olá, Fulano</h1>
+        <h1>Olá, {user.name}</h1>
         <BiExit />
       </Header>
 
       <TransactionsContainer>
         <ul>
-          <ListItemContainer>
+          {transactions.map((t)=>(
+          <ListItemContainer key={t._id}>
             <div>
-              <span>30/11</span>
-              <strong>Almoço mãe</strong>
+              <span>{t.date}</span>
+              <strong>{t.message}</strong>
             </div>
-            <Value color={"negativo"}>120,00</Value>
+            <Value color={t.tipo ==='saida'?"negativo": "positivo"}>{t.value}</Value>
           </ListItemContainer>
-
-          <ListItemContainer>
-            <div>
-              <span>15/11</span>
-              <strong>Salário</strong>
-            </div>
-            <Value color={"positivo"}>3000,00</Value>
-          </ListItemContainer>
+          ))}
         </ul>
 
         <article>
           <strong>Saldo</strong>
-          <Value color={"positivo"}>2880,00</Value>
+          <Value color={"positivo"}>{balance.toFixed(2)}</Value>
         </article>
       </TransactionsContainer>
 
 
       <ButtonsContainer>
+        
         <button>
+        <Link to="/nova-transacao/entrada">
           <AiOutlinePlusCircle />
           <p>Nova <br /> entrada</p>
+          </Link>
         </button>
         <button>
+          <Link to="/nova-transacao/saida">
           <AiOutlineMinusCircle />
           <p>Nova <br />saída</p>
+          </Link>
         </button>
       </ButtonsContainer>
 

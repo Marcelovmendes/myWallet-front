@@ -15,12 +15,25 @@ export default function SignUpPage() {
     e.preventDefault();
     try{
       await axios.post("http://localhost:5000/cadastro",form)
+      navigate("/")
 
     }catch (err){
-      console.log(err.response.data)
+      console.log(err)
+      switch (err.response.status) {
+        case 409:
+          alert("Usuário ja cadastrado");
+          break;
+        case 422:
+          alert(err.response.data);
+          break;
+        case 500:
+          alert("Erro interno do servidor");
+          break;
+        default:
+          console.log(err);
+      }
 
     }
-     navigate("/");
   };
   return (
     <SingUpContainer>
