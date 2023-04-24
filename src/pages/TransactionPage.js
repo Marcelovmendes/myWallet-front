@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
 export default function TransactionsPage() {
-  const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext); 
   const [newTransaction, setNewTransaction] = useState({
     value: "",
     message: "",

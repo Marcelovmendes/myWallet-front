@@ -21,11 +21,10 @@ export default function HomePage() {
           },
         });
         setTransactions(response.data);
-      } catch (err) {
+      } catch (err) { 
         console.log(err);
-        if(!user.token){
-          alert("Faça login")
-        }
+        alert(err.response.data)
+        if(!user.token) return alert("Faça login")
       }
     } 
 
@@ -41,14 +40,25 @@ export default function HomePage() {
       .reduce((acc, t) => acc + t.value, 0);
     setBalance(totalIncome - totalExpense);
   }, [transactions]);
-
-  console.log(balance)
-
+  async function handleLogout() {
+    try {
+      await axios.post("http://localhost:5000/logout", {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
+      localStorage.removeItem("user");
+    } catch (err) {
+      console.log(user.token)
+      console.log(err);
+      alert(err.response.data);
+    }
+  }
   return (
     <HomeContainer>
       <Header>
         <h1>Olá, {user.name}</h1>
-        <BiExit />
+        <BiExit onClick={handleLogout}/>
       </Header>
 
       <TransactionsContainer>

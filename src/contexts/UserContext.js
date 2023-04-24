@@ -12,7 +12,7 @@ export default function UserProvider({children}){
         if(lsUser===null){
             navigate("/")
         }else{
-            navigate("/hoje")
+            navigate("/home")
         }
     },[navigate])
  
@@ -21,4 +21,4 @@ export default function UserProvider({children}){
             {children}
         </UserContext.Provider>
     )
-}
+}   
