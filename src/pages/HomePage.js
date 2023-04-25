@@ -16,7 +16,7 @@ export default function HomePage() {
   useEffect(() => {
     async function fetchTransactions() {
       try {
-        if (!user?.token) return alert("faça login");
+        if (!user.token) return alert("faça login");
         const response = await axios.get("http://localhost:5000/home", {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -65,7 +65,7 @@ export default function HomePage() {
     <HomeContainer>
       <Header>
         <h1>Olá, {user.name}</h1>
-        <BiExit onClick={handleLogout} />
+        <BiExit onClick={handleLogout} style={{ cursor: 'pointer' }}/>
       </Header>
 
       <TransactionsContainer>
