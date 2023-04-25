@@ -182,6 +182,12 @@ const TransactionsContainer = styled.article`
   }
   max-height: 400px;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 8px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+  }
 `;
 const ButtonsContainer = styled.section`
   margin-top: 15px;
