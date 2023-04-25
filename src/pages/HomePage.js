@@ -134,7 +134,8 @@ const NoTransactions = styled.div`
 const SaldoContainer = styled.article`
 display: flex;
 justify-content: space-between;
-border-radius: 3px;
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
 background-color: #FFFFFF;
 
 strong{
@@ -166,7 +167,8 @@ const TransactionsContainer = styled.article`
   flex-grow: 1;
   background-color: #fff;
   color: #000;
-  border-radius: 5px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
   padding: 16px;
   display: flex;
   flex-direction: column;
