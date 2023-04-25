@@ -82,7 +82,7 @@ export default function HomePage() {
                   <strong>{t.message}</strong>
                 </div>
                 <Value color={t.tipo === "saida" ? "negativo" : "positivo"}>
-                  {t.value}
+                  {t.value.toFixed(2)}
                 </Value>
               </ListItemContainer>
             ))}
