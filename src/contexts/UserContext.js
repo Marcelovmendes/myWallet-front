@@ -14,7 +14,7 @@ export default function UserProvider({children}){
         }else{
             navigate("/home")
         }
-    },[navigate])
+    },[navigate,lsUser])
  
     return(
         <UserContext.Provider value={{user, setUser}}>

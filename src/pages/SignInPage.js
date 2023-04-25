@@ -53,7 +53,7 @@ export default function SignInPage() {
           name="password"
           placeholder="Senha"
           type="password"
-          autocomplete="new-password"
+          autoComplete="new-password"
           value={form.password}
           onChange={handleForm}
         />

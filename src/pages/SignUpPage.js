@@ -62,7 +62,7 @@ export default function SignUpPage() {
           name="password"
           placeholder="Senha"
           type="password"
-          autocomplete="new-password"
+          autoComplete="new-password"
         />
         <input
           required
