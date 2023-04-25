@@ -70,4 +70,10 @@ const TransactionsContainer = styled.main`
     align-self: flex-start;
     margin-bottom: 40px;
   }
+  input{
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+   margin: 0;  
+ }}
 `;
