@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const handleSignUp = async(e) => {
     e.preventDefault();
     try{
-      await axios.post(form)
+      await axios.post("https://my-wallet-node.onrender.com/cadastro",form)
       navigate("/")
 
     }catch (err){
