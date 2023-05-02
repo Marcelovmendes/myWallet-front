@@ -14,7 +14,7 @@ export default function SignUpPage() {
   const handleSignUp = async(e) => {
     e.preventDefault();
     try{
-      await axios.post("http://localhost:5000/cadastro",form)
+      await axios.post(form)
       navigate("/")
 
     }catch (err){

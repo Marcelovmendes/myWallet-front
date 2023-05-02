@@ -18,7 +18,7 @@ export default function SignInPage() {
   const handleLogin = async(e) => {
     e.preventDefault();
      try{
-     const res = await axios.post("http://localhost:5000/",form)
+     const res = await axios.post("",form)
      const {token,user} =res.data
      const {name,email,_id} =user
      setUser({_id,name,email,token})
