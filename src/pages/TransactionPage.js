@@ -20,7 +20,7 @@ export default function TransactionsPage() {
     e.preventDefault();
     try {
       await axios.post(
-        `http://localhost:5000/nova-transacao/${tipo}`,
+        `https://my-wallet-node.onrender.com/nova-transacao/${tipo}`,
         newTransaction,
         {
           headers: {

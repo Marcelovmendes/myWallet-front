@@ -17,7 +17,7 @@ export default function HomePage() {
     async function fetchTransactions() {
       try {
         if (!user.token) return alert("faça login");
-        const response = await axios.get("http://localhost:5000/home", {
+        const response = await axios.get("https://my-wallet-node.onrender.com/home", {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -45,7 +45,7 @@ export default function HomePage() {
   async function handleLogout() {
     try {
       await axios.post(
-        "http://localhost:5000/logout",
+        "https://my-wallet-node.onrender.com/logout",
         {},
         {
           headers: {
