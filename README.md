@@ -1,5 +1,5 @@
 # My Wallet - Gerenciamento Financeiro Simplificado 💰
-
+![](public/assets/layout-projeto.png)
 
 ## Visão Geral
 
@@ -28,7 +28,6 @@ No entanto, vale ressaltar que o back-end está hospedado no Render. Em situaç�
 ## Desafios e Soluções Estratégicas
 
 Uma dificuldade encontrada foi como lidar com as informações dos usuários após o logout, garantindo segurança e continuidade da experiência com suas transações. Nesse sentido, a combinação do Local Storage com um context foi a solução que escolhi para armazenar e recuperar o token do usuário, permitindo um acesso tranquilo e seguro, sem se preocupar em perder suas informações mesmo depois do logout.
-
 
 
 ## Design com Elegância
