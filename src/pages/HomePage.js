@@ -120,7 +120,7 @@ const NoTransactions = styled.div`
   width: 180px;
   border-radius: nullpx;
   margin-top: 150px;
-  margin-left: 75px;
+  margin-left: 60px;
   span {
     color: #868686;
     font-family: Raleway;

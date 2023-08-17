@@ -1,12 +1,12 @@
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+  export const UserContext = createContext()
 
-export const UserContext = createContext()
-
-export default function UserProvider({children}){
-    const lsUser= JSON.parse(localStorage.getItem("user"))
-    const [user,setUser] =useState(lsUser !== null ? lsUser: {})
-    const navigate = useNavigate()
+  
+    export default function UserProvider({children}){
+        const lsUser= JSON.parse(localStorage.getItem("user"))
+        const [user,setUser] =useState(lsUser !== null ? lsUser: {})
+        const navigate = useNavigate()
 
     useEffect(()=>{
         if(lsUser===null){
@@ -21,4 +21,4 @@ export default function UserProvider({children}){
             {children}
         </UserContext.Provider>
     )
-}   
+} 
