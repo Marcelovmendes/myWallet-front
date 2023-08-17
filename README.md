@@ -5,6 +5,12 @@
 
 O projeto "My Wallet" foi desenvolvido como parte da busca pelo aprimoramento das minhas habilidades de desenvolvimento full stack. É um aplicativo web interativo que trás uma forma dos usuários cuidarem do gerenciamento de suas finanças pessoais.
 
+## Instruções de Uso
+
+Interessado em conferir o projeto? Sem problemas! Ele está disponível através do [link do deploy](https://my-wallet-react-two.vercel.app/).
+
+No entanto, vale ressaltar que o back-end está hospedado no Render. Em situações em que o servidor fica inativo por alguns dias, pode ocorrer uma leve demora na resposta inicial. Depois que a manivela roda a primeira vez, ele flui normalmente haha.
+
 ## Funcionalidades Principais
 
 - **Registro e Autenticação Segura**: Através do React.js e JWT token criei páginas de registro e login que oferecem uma entrada segura e eficiente aos usuários.
@@ -23,11 +29,7 @@ O projeto "My Wallet" foi desenvolvido como parte da busca pelo aprimoramento da
 
 Uma dificuldade encontrada foi como lidar com as informações dos usuários após o logout, garantindo segurança e continuidade da experiência com suas transações. Nesse sentido, a combinação do Local Storage com um context foi a solução que escolhi para armazenar e recuperar o token do usuário, permitindo um acesso tranquilo e seguro, sem se preocupar em perder suas informações mesmo depois do logout.
 
-## Instruções de Uso
 
-Interessado em conferir o projeto? Sem problemas! Ele está disponível através do [link do deploy](https://my-wallet-react-two.vercel.app/).
-
-No entanto, vale ressaltar que o back-end está hospedado no Render. Em situações em que o servidor fica inativo por alguns dias, pode ocorrer uma leve demora na resposta inicial. Depois que a manivela roda a primeira vez, ele flui normalmente haha.
 
 ## Design com Elegância
 
