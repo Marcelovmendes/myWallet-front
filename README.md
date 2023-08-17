@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# My Wallet - Gerenciamento Financeiro Simplificado 💰
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Visão Geral
 
-In the project directory, you can run:
+O projeto "My Wallet" foi desenvolvido como parte da busca pelo aprimoramento das minhas habilidades de desenvolvimento full stack. É um aplicativo web interativo que trás uma forma dos usuários cuidarem do gerenciamento de suas finanças pessoais.
 
-### `npm start`
+## Funcionalidades Principais
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Registro e Autenticação Segura**: Através do React.js e JWT token criei páginas de registro e login que oferecem uma entrada segura e eficiente aos usuários.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Gerenciamento de Despesas Inteligente**: A página inicial permite adicionar despesas de forma dinâmica. O diferencial está no cálculo automático das despesas, proporcionando um boa visão dos gastos em relação à receita.
 
-### `npm test`
+- **Experiência Responsiva de Qualidade**: Embora a ideia seja voltada para a experiência mobile, o projeto tem uma experiencia legal mesmo sendo feito com tecnologias web.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tecnologias em Foco
 
-### `npm run build`
+- **Front-End de Destaque**: Utilizei o React.js para criar interfaces interativas e bem bonitas, proporcionando uma experiência que prioriza a usabilidade.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Infraestrutura Robusta de Back-End**: Nos bastidores, usei Express.js e Node.js para formar um ambiente seguro e bem construido. O armazenamento e gerenciamento de informações dos usuários foi feito através do MongoDB.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Desafios e Soluções Estratégicas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Uma dificuldade encontrada foi como lidar com as informações dos usuários após o logout, garantindo segurança e continuidade da experiência com suas transações. Nesse sentido, a combinação do Local Storage com um context foi a solução que escolhi para armazenar e recuperar o token do usuário, permitindo um acesso tranquilo e seguro, sem se preocupar em perder suas informações mesmo depois do logout.
 
-### `npm run eject`
+## Instruções de Uso
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Interessado em conferir o projeto? Sem problemas! Ele está disponível através do [link do deploy](https://my-wallet-react-two.vercel.app/).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No entanto, vale ressaltar que o back-end está hospedado no Render. Em situações em que o servidor fica inativo por alguns dias, pode ocorrer uma leve demora na resposta inicial. Depois que a manivela roda a primeira vez, ele flui normalmente haha.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Design com Elegância
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A estilização do projeto foi desenvolvida com a aplicação de React e Styled Components. O resultado é uma interface que junta funcionalidade e estética de maneira harmoniosa.
 
-## Learn More
+## Considerações Finais
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O projeto "My Wallet" junta a dedicação, aplicação prática e superação de alguns perrengues. A experiência proporcionada aos usuários sinto que foi boa, também consegui estruturar uma boa autenticalçao entregando e mostrando o compromisso com a segurança dos dados. Esta iniciativa representa um marco nos meus aprendizados e em minha trajetória no universo do desenvolvimento full stack. 🌟🚀
